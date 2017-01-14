@@ -1,0 +1,19 @@
+{
+    "name": "jpuck/color-mixer",
+    "description": "Mix CSS colors like paint.",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Jeff Puckett",
+            "email": "jeff@jeffpuckett.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "jpuck\\ColorMixer\\": "src/"
+        }
+    }
+}
