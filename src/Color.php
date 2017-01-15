@@ -19,7 +19,7 @@ class Color
             throw new InvalidArgumentException("$hex is not a valid string.");
         }
 
-        $this->hex = ltrim($hex, '#');
+        $this->hex = strtoupper( ltrim($hex, '#') );
     }
 
     /**
