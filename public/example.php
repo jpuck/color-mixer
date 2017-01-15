@@ -5,9 +5,9 @@
 use jpuck\ColorMixer\Mixer;
 
 $colors = [
-    '#663399',
+    'rebeccapurple',
     '#000000',
-    '#ffffff',
+    'red',
 ];
 
 $mix = (new Mixer(...$colors))->mix()->hex();
