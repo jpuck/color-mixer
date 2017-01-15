@@ -9,12 +9,17 @@ class Color
     /**
      * Creates an instance of Color.
      *
-     * @param string $hex CSS hexadecimal color with optional leading hash #
+     * @param string Canonical name or hexadecimal CSS color,
+     *      with optional leading hash #
      *
      * @return Color Returns a new instance of Color.
      */
-    public function __construct(string $hex)
+    public function __construct(string $color)
     {
+        if ( empty($hex = CanonicalNames::hex($color)) ) {
+            $hex = $color;
+        }
+
         if ( ! static::validateHexColorString($hex) ) {
             throw new InvalidArgumentException("$hex is not a valid string.");
         }
