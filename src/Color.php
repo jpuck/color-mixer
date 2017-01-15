@@ -27,9 +27,29 @@ class Color
      *
      * @return string Returns hexadecimal color string with leading hash #.
      */
-    public function hex() : string
+    public function hex(string ...$options) : string
     {
-        return '#'.$this->hex;
+        $return = $this->hex;
+
+        if ( ! in_array('no-hash', $options) ) {
+            $return = '#'.$return;
+        }
+
+        return $return;
+    }
+
+    /**
+     * Get the CSS decimal color.
+     *
+     * @return array Returns rgb integer decimal colors.
+     */
+    public function dec() : array
+    {
+        $colors = str_split( $this->hex('no-hash'), 2 );
+
+        return array_map(function($color){
+            return hexdec($color);
+        }, $colors);
     }
 
     /**

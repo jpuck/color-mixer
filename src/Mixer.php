@@ -43,4 +43,25 @@ class Mixer
     {
         return $this->colors;
     }
+
+    /**
+     * Get the mixed color.
+     *
+     * @return Color Returns a new Color object from the Mixer.
+     */
+    public function mix() : Color
+    {
+        foreach ($this->colors as $color) {
+            $colors  = $color->dec();
+            $reds  []= $colors[0];
+            $greens[]= $colors[1];
+            $blues []= $colors[2];
+        }
+
+        $red   = dechex( round(array_sum($reds)  / count($reds)  ) );
+        $green = dechex( round(array_sum($greens)/ count($greens)) );
+        $blue  = dechex( round(array_sum($blues) / count($blues) ) );
+
+        return new Color($red.$green.$blue);
+    }
 }
