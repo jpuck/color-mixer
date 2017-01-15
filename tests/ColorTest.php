@@ -1,6 +1,6 @@
 <?php
 
-use jpuck\ColorMixer\{Color};
+use jpuck\ColorMixer\Color;
 
 class ColorTest extends PHPUnit_Framework_TestCase
 {
