@@ -4,6 +4,8 @@ use InvalidArgumentException;
 
 class Color
 {
+    protected $hex;
+
     /**
      * Creates an instance of Color.
      *
@@ -16,6 +18,18 @@ class Color
         if ( ! static::validateHexColorString($hex) ) {
             throw new InvalidArgumentException("$hex is not a valid string.");
         }
+
+        $this->hex = ltrim($hex, '#');
+    }
+
+    /**
+     * Get the CSS hexadecimal color.
+     *
+     * @return string Returns hexadecimal color string with leading hash #.
+     */
+    public function hex() : string
+    {
+        return '#'.$this->hex;
     }
 
     /**

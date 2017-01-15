@@ -65,4 +65,16 @@ class ColorTest extends PHPUnit_Framework_TestCase
         $this->expectException(InvalidArgumentException::class);
         new Color($colorString);
     }
+
+    public function testCanGetHexadecimal()
+    {
+        $hexColor = 'FF0033';
+        $expected = '#ff0033';
+
+        $colorObj = new Color($hexColor);
+        $hexColor = $colorObj->hex();
+        $hexColor = strtolower($hexColor);
+
+        $this->assertSame($expected, $hexColor);
+    }
 }
