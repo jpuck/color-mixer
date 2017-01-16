@@ -1,3 +1,4 @@
 /vendor/
 /coverage/
 /nbproject/private/
+/phpunit.xml
