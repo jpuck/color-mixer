@@ -6,7 +6,9 @@ use jpuck\ColorMixer\Mixer;
 
 $colors = [
     'rebeccapurple',
-    '#000000',
+    '#33Ab42',
+    '000000',
+    '#00f',
     'red',
 ];
 

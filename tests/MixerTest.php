@@ -40,4 +40,15 @@ class MixerTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame($gray, $mixer->mix()->hex());
     }
+
+    public function testCanMixColorsWithLeadingZeros()
+    {
+        $colorOne = '#000000';
+        $colorTwo = '#04063E';
+        $expected = '#02031F';
+
+        $actual = (new Mixer($colorOne, $colorTwo))->mix()->hex();
+
+        $this->assertSame($expected, $actual);
+    }
 }

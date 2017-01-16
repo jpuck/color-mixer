@@ -62,6 +62,13 @@ class Mixer
         $green = dechex( round(array_sum($greens)/ count($greens)) );
         $blue  = dechex( round(array_sum($blues) / count($blues) ) );
 
+        // pad single-digit hexadecimals with leading zero
+        foreach ([&$red, &$green, &$blue] as &$color) {
+            if (strlen($color) === 1) {
+                $color = "0$color";
+            }
+        }
+
         return new Color($red.$green.$blue);
     }
 }
