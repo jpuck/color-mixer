@@ -37,7 +37,7 @@ class Color
     /**
      * Get the CSS hexadecimal color.
      *
-     * @return string Returns hexadecimal color string with leading hash #.
+     * @return string Returns 6-digit hexadecimal color with leading hash #.
      */
     public function hex(string ...$options) : string
     {
