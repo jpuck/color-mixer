@@ -25,6 +25,13 @@ class Color
         }
 
         $this->hex = strtoupper( ltrim($hex, '#') );
+
+        // normalize 3-digit hex values by expanding to 6-digits
+        if ( strlen($short = $this->hex) === 3 ) {
+            $this->hex = implode(array_map(function($char){
+                return $char.$char;
+            }, str_split($short)));
+        }
     }
 
     /**

@@ -196,6 +196,29 @@ class ColorTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Color::class, new Color($colorString));
     }
 
+    public function threeDigitHexadecimalDataProvider()
+    {
+        return [
+            ['639',  '#663399'],
+            ['f03',  '#FF0033'],
+            ['#f03', '#FF0033'],
+            ['000',  '#000000'],
+            ['#FFF', '#FFFFFF'],
+            ['333',  '#333333'],
+            ['a40',  '#AA4400'],
+            ['#F60', '#FF6600'],
+            ['#00b', '#0000BB'],
+        ];
+    }
+
+    /**
+     *  @dataProvider threeDigitHexadecimalDataProvider
+     */
+    public function testCanInterpretThreeDigitHex($three, $expected)
+    {
+        $this->assertSame( $expected, (new Color($three))->hex() );
+    }
+
     public function invalidColorStringDataProvider()
     {
         return [
