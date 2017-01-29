@@ -12,7 +12,7 @@ Branch      | Status
 
 Registered on [packagist][6] for easy installation using [composer][5].
 
-    composer require --no-dev jpuck/color-mixer
+    composer require jpuck/color-mixer
 
 Currently supports the [CSS color keywords up to Color Module Level 4][13] and
 hexadecimal values with or without a leading hash `#`
