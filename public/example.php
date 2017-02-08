@@ -12,8 +12,9 @@ $colors = [
     'red',
 ];
 
-$mix = (new Mixer(...$colors))->mix()->hex();
+$mix = ( new Mixer(...$colors) )->mix()->hex();
 
+// paint each color in a panel
 foreach ( $colors as $color ) { ?>
     <svg class="color-mixer-item">
         <rect
@@ -24,6 +25,8 @@ foreach ( $colors as $color ) { ?>
     </svg>
     <br/>
 <?php } ?>
+
+    <!-- paint the last panel the mix color -->
     <svg class="color-mixer-item">
         <rect
             width="100%"
@@ -33,6 +36,7 @@ foreach ( $colors as $color ) { ?>
     </svg>
 </div>
 
+
 <style>
 html, body, #color-mixer-container {
     height: 100%;
@@ -40,6 +44,8 @@ html, body, #color-mixer-container {
 body {
     margin: 0;
 }
+
+/* paint the background with the mix color */
 #color-mixer-container {
     display: flex;
     justify-content: space-around;
